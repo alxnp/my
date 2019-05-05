@@ -9,12 +9,12 @@
 
 <body>
 
-<p align='center'>kef=<input type="text" id="kef" value=""></p><p align='center'> sum=<input type="text" id="sum" value="">
-</p><p align='center'> stup=<input type="text" id="stup" value=""></p><p align='center'> <button onclick="multi()"  >Bild</button></p>
+<p align='center' ><input type="text" id="kef" value="" placeholder="kef" style="width:93%;"></p><p align='center'> <input type="text" id="sum" placeholder="sum" value="" style="width:93%;">
+</p><p align='center'> <input type="text" id="stup" value="" placeholder="stup" style="width:93%;"></p><p align='center'> <button onclick="multi()"  style="width:95%;">Bild</button></p>
 <div id="result1"></div>
 	<script>
 function multi(){
-var s=document.getElementById('sum').value;var res="<table border='1' align='center'>   <caption>Lesenka</caption>   <tr><th>Stupeni</th>    <th>Summ</th>   </tr>";
+var s=document.getElementById('sum').value;var res="<table border='1' align='center' style='width:95%;'>   <caption>Lesenka</caption>   <tr><th>Stupeni</th>    <th>Summ</th>   </tr>";
 for (var i = 0;i<document.getElementById('stup').value;i++) {	
 s*=document.getElementById('kef').value;
 res+="<tr><td>"+i+"</td><td> "+s+"</td></tr>";	
@@ -29,3 +29,4 @@ document.getElementById("result1").innerHTML = res;
 </body>
 
 </html>
+

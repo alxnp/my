@@ -1,1 +1,181 @@
-Vhff
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=divice-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title></title>
+</head>
+
+<body style="margin:0;">
+<canvas id="can" style="display: block; position: absolute; background-color:#000000;z-index=0;"></canvas>	
+<canvas id="can2" style="display: block; position: absolute;z-index=1;"></canvas>	
+<script>
+window.onload = init;
+var can,can2,ctx,flag_move=3,flag_stop=0;
+var mw,mh,aw,ah,kw,kh,sw,sh,lw,lh,ow,oh,xw,xh;
+var m=5,a=5,k=5,s=5,l=5,o=5,x=5;
+
+
+function init() 
+{
+	can=document.getElementById('can');ctx=can.getContext('2d');
+	can.width = window.innerWidth;can.height=window.innerHeight;
+	can2=document.getElementById('can2');ctx2=can2.getContext('2d');
+	can2.width = window.innerWidth;can2.height=window.innerHeight;
+	mw=window.innerWidth/2-5;mh=window.innerHeight/2;
+	aw=window.innerWidth/2-5;ah=window.innerHeight/2;
+	sw=window.innerWidth/2-5;sh=window.innerHeight/2;
+	sw=window.innerWidth/2-5;sh=window.innerHeight/2;
+	pw=window.innerWidth/2-5;ph=window.innerHeight/2;
+	lw=window.innerWidth/2-5;lh=window.innerHeight/2;
+	ow=window.innerWidth/2-5;oh=window.innerHeight/2;
+	xw=window.innerWidth/2-5;xh=window.innerHeight/2;
+	ctx.strokeStyle="#32cd32";
+	ctx.fillStyle="#32cd32";
+	ctx2.strokeStyle="#32cd32";
+	ctx2.fillStyle="#32cd32";
+	ctx.font='bold 25px Arial';
+	ctx.strokeText("M",w,h);ctx.strokeText("А",w,h);ctx.strokeText("К",w,h);ctx.strokeText("С",w,h);
+    ctx.strokeText(" ",w,h);ctx.strokeText("Л",w,h);ctx.strokeText("О",w,h);ctx.strokeText("Х",w,h);
+	
+}
+
+setInterval(function dr()
+{
+m+=5;	
+
+if (!flag_stop) ctx.clearRect(0,0,can.width,can.height);
+if (m>can.width*0.3) flag_stop=1;
+if (flag_stop) {ctx.strokeText("M",10,can.height/2);}
+if (flag_move==3 && !flag_stop) {mw+=m;ctx.strokeText("M",mw,mh);	flag_move=2; return;}
+if (flag_move==2 && !flag_stop) {mh+=m;ctx.strokeText("M",mw,mh);	flag_move=1; return;}
+if (flag_move && !flag_stop) {mw-=m;ctx.strokeText("M",mw,mh);	flag_move=0; return;}
+if (!flag_move && !flag_stop) {mh-=m;ctx.strokeText("M",mw,mh);	flag_move=3; return;}
+
+/*if (t>can.width-30) flag_move=1;	
+if (t<0) flag_move=0;
+if (flag_move) t-=4; if (!flag_move) t+=4;
+ctx.clearRect(0,0,can.width,can.height);	
+ctx.fillRect(t,t,30,30);	
+*/
+},550);
+
+setInterval(function dr()
+{
+a+=3;	
+
+if (!flag_stop) ctx.clearRect(0,0,can.width,can.height);
+if (a>can.width*0.25) flag_stop=1;
+if (flag_stop) {ctx.strokeText("А",35,can.height/2);}
+if (flag_move==3 && !flag_stop) {aw+=a;ctx.strokeText("А",aw,ah);	flag_move=2; return;}
+if (flag_move==2 && !flag_stop) {ah+=a;ctx.strokeText("А",aw,ah);	flag_move=1; return;}
+if (flag_move && !flag_stop) {aw-=a;ctx.strokeText("А",aw,ah);	flag_move=0; return;}
+if (!flag_move && !flag_stop) {ah-=a;ctx.strokeText("А",aw,ah);	flag_move=3; return;}
+
+},570);
+
+setInterval(function dr()
+{
+a+=3;	
+
+if (!flag_stop) ctx.clearRect(0,0,can.width,can.height);
+if (k>can.width*0.3) flag_stop=1;
+if (flag_stop) {ctx.strokeText("К",60,can.height/2);}
+if (flag_move==3 && !flag_stop) {kw+=k;ctx.strokeText("К",kw,kh);	flag_move=2; return;}
+if (flag_move==2 && !flag_stop) {kh+=k;ctx.strokeText("К",kw,kh);	flag_move=1; return;}
+if (flag_move && !flag_stop) {kw-=k;ctx.strokeText("К",kw,kh);	flag_move=0; return;}
+if (!flag_move && !flag_stop) {kh-=k;ctx.strokeText("К",kw,kh);	flag_move=3; return;}
+
+},690);
+
+setInterval(function dr()
+{
+s+=3;	
+
+if (!flag_stop) ctx.clearRect(0,0,can.width,can.height);
+if (k>can.width*0.3) flag_stop=1;
+if (flag_stop) {ctx.strokeText("С",85,can.height/2);}
+if (flag_move==3 && !flag_stop) {sw+=s;ctx.strokeText("С",sw,sh);	flag_move=2; return;}
+if (flag_move==2 && !flag_stop) {sh+=s;ctx.strokeText("С",sw,sh);	flag_move=1; return;}
+if (flag_move && !flag_stop) {sw-=s;ctx.strokeText("С",sw,sh);	flag_move=0; return;}
+if (!flag_move && !flag_stop) {sh-=s;ctx.strokeText("С",sw,sh);	flag_move=3; return;}
+
+},710);
+
+setInterval(function dr()
+{
+l+=3;	
+
+if (!flag_stop) ctx.clearRect(0,0,can.width,can.height);
+if (k>can.width*0.3) flag_stop=1;
+if (flag_stop) {ctx.strokeText("Л",can.width-75,can.height/2);}
+if (flag_move==3 && !flag_stop) {lw+=l;ctx.strokeText("Л",lw,lh);	flag_move=2; return;}
+if (flag_move==2 && !flag_stop) {lh+=l;ctx.strokeText("Л",lw,lh);	flag_move=1; return;}
+if (flag_move && !flag_stop) {lw-=l;ctx.strokeText("Л",lw,lh);	flag_move=0; return;}
+if (!flag_move && !flag_stop) {lh-=l;ctx.strokeText("Л",lw,lh);	flag_move=3; return;}
+
+},730);
+
+setInterval(function dr()
+{
+o+=3;	
+
+if (!flag_stop) ctx.clearRect(0,0,can.width,can.height);
+if (k>can.width*0.3) flag_stop=1;
+if (flag_stop) {ctx.strokeText("О",can.width-50,can.height/2);}
+if (flag_move==3 && !flag_stop) {ow+=l;ctx.strokeText("О",ow,oh);	flag_move=2; return;}
+if (flag_move==2 && !flag_stop) {oh+=l;ctx.strokeText("О",ow,oh);	flag_move=1; return;}
+if (flag_move && !flag_stop) {ow-=l;ctx.strokeText("О",ow,oh);	flag_move=0; return;}
+if (!flag_move && !flag_stop) {oh-=l;ctx.strokeText("О",ow,oh);	flag_move=3; return;}
+
+},750);
+
+setInterval(function dr()
+{
+x+=3;	
+
+if (!flag_stop) ctx.clearRect(0,0,can.width,can.height);
+if (k>can.width*0.3) flag_stop=1;
+if (flag_stop) {ctx.strokeText("Х",can.width-25,can.height/2);}
+if (flag_move==3 && !flag_stop) {xw+=x;ctx.strokeText("Х",xw,xh);	flag_move=2; return;}
+if (flag_move==2 && !flag_stop) {xh+=x;ctx.strokeText("Х",xw,xh);	flag_move=1; return;}
+if (flag_move && !flag_stop) {xw-=x;ctx.strokeText("Х",xw,xh);	flag_move=0; return;}
+if (!flag_move && !flag_stop) {xh-=x;ctx.strokeText("Х",xw,xh);	flag_move=3; return;}
+
+},770);
+
+
+setInterval(function dr()
+{
+ctx.fillRect(0,can.height/2+27,can.width,2);	
+
+setTimeout(function jump () {ctx.strokeText("M",10,can.height/2-21); }, 100);
+
+setTimeout(function jump () {ctx.clearRect(0,0,can.width,can.height/2-20);	 }, 400);
+
+setTimeout(function jump () {ctx.strokeText("Х",can.width-25,can.height/2-21); }, 200);
+
+setTimeout(function jump () {ctx.clearRect(0,0,can.width,can.height/2-20);	 }, 500);
+
+},9000);
+
+
+
+
+var can2y=0,chag=0;
+
+setInterval(function bg () {    chag++;
+    ctx2.fillRect(can2.width*0.27,can2.height*0.8+chag,1,1);
+    ctx2.fillRect(can2.width*0.62,can2.height*0.35+chag,1,1);	
+    ctx2.fillRect(can2.width*0.13,can2.height*0.49+chag,1,1);	
+    ctx2.fillRect(can2.width*0.44,can2.height*0.72+chag,1,1);	
+    ctx2.fillRect(can2.width*0.92,can2.height*0.21+chag,1,1);	},800);
+	
+
+
+</script>
+
+</body>
+
+</html>
